@@ -1,3 +1,6 @@
+use std::thread;
+use std::time::Duration;
+
 use eframe::App;
 use egui::CentralPanel;
 
@@ -18,8 +21,8 @@ struct MyApp {
 impl Default for MyApp {
     fn default() -> Self {
         Self {
-            name: "Brendan".to_owned(),
             age: 0,
+            name: "Brendan".to_owned(),
         }
     }
 }
@@ -33,11 +36,11 @@ impl App for MyApp {
                 ui.text_edit_singleline(&mut self.name);
             });
 
-            if ui.button("Click each year").clicked() {
+            loop {
                 self.age += 1;
+                thread::sleep(Duration::from_secs(2));
+                ui.label(format!("your name: {}, your age: {}", self.name, self.age));
             }
-
-            ui.label(format!("your name: {}, your age: {}", self.name, self.age));
         });
     }
 }
