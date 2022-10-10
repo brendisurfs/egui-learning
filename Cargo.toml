@@ -1,0 +1,12 @@
+[package]
+name = "egui-learning"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+eframe = "0.19.0"
+egui = "0.19.0"
+egui_node_graph = "0.3.0"
+three-d = "0.13.0"
