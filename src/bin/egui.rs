@@ -1,6 +1,3 @@
-use std::thread;
-use std::time::Duration;
-
 use eframe::App;
 use egui::CentralPanel;
 
@@ -14,8 +11,8 @@ fn main() {
 }
 
 struct MyApp {
-    name: String,
     age: u32,
+    name: String,
 }
 
 impl Default for MyApp {
