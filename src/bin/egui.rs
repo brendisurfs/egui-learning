@@ -28,7 +28,7 @@ impl Default for MyApp {
 }
 
 impl App for MyApp {
-    fn update(&mut self, ctx: &egui::Context, _: &mut eframe::Frame) {
+    fn update(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
         CentralPanel::default().show(ctx, |ui| {
             ui.heading("My egui application");
             ui.horizontal(|ui| {
@@ -36,11 +36,7 @@ impl App for MyApp {
                 ui.text_edit_singleline(&mut self.name);
             });
 
-            loop {
-                self.age += 1;
-                thread::sleep(Duration::from_secs(2));
-                ui.label(format!("your name: {}, your age: {}", self.name, self.age));
-            }
+            ui.label(format!("your name: {}, your age: {}", self.name, self.age));
         });
     }
 }

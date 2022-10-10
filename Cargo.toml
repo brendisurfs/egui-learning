@@ -8,6 +8,10 @@ edition = "2021"
 name = "three"
 path = "src/bin/three.rs"
 
+[[bin]]
+name = "egui"
+path = "src/bin/egui.rs"
+
 
 [dependencies]
 eframe = "0.19.0"
